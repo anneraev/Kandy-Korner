@@ -12,7 +12,7 @@ export default class KandyKorner extends Component {
     employeesFromAPI = [
         {id: 1, name: "Bob"},
         {id: 2, name: "Greg"},
-        {id: 2, name: "Julie"}
+        {id: 3, name: "Julie"}
     ]
 
     candyTypesFromAPI = [
@@ -34,11 +34,11 @@ export default class KandyKorner extends Component {
 
     render() {
         return (
-            <article classname ="kandy-korner">
+            <article className ="kandy-korner">
             <h1>Kandy Korner</h1>
             <StoreList stores= {this.state.stores} />
             <EmployeeList employees= {this.state.employees} />
-            <CandiesList candies= {this.state.candies} />
+            <CandiesList candies= {this.state.candies} candyTypes={this.state.candyTypes} />
             </article>
         )
     }
