@@ -8,10 +8,27 @@ import "./applicationViews.css";
 
 export default class ApplicationViews extends Component {
     state = {
-        employees: this.employeesFromAPI,
-        stores: this.storesFromAPI,
-        candyTypes: this.candyTypesFromAPI,
-        candies: this.candiesFromAPI
+        employees: [],
+        stores: [],
+        candyTypes: [],
+        candies: [],
+    }
+
+    componentDidMount() {
+        const newState = {}
+        fetch("http://localhost:8088/employees")
+            .then(r => r.json())
+            .then(employees => newState.employees = employees)
+            .then(() => fetch("http://localhost:8088/candies")
+            .then(r => r.json()))
+            .then(candies => newState.candies = candies)
+            .then(() => fetch("http://localhost:8088/candyTypes")
+            .then(r => r.json()))
+            .then(candyTypes => newState.candyTypes = candyTypes)
+            .then(() => fetch("http://localhost:8088/stores")
+            .then(r => r.json()))
+            .then(stores => newState.stores = stores)
+            .then(() => this.setState(newState))
     }
 
     render() {
