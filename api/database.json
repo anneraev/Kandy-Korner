@@ -1,0 +1,23 @@
+{
+"stores": [
+    { "id": 1, "name": "Nashvill North", "address": "500 Wonka Avenue" },
+    { "id": 2, "name": "Nashville South", "address": "666 Nero Place" }
+],
+
+"employees": [
+    { "id": 1, "name": "Bob" },
+    { "id": 2, "name": "Greg" },
+    { "id": 3, "name": "Julie" }
+],
+
+"candyTypes": [
+    { "id": 1, "name": "chocolate" },
+    { "id": 2, "name": "hard" }
+],
+
+"candies": [
+    { "id": 1, "name": "chocolate bar", "candyTypeId": 1 },
+    { "id": 2, "name": "jawbreaker", "candyTypeId": 2 },
+    { "id": 3, "name": "rock candy", "candyTypeId": 2 }
+]
+}
